@@ -1,0 +1,18 @@
+.btn_calc {
+    text-align: center;
+}
+
+#delete_list {
+    text-align: center; 
+}
+
+.inline {
+    display: inline-block
+}
+/* #update_btns{
+    text-align: center; 
+} */
+
+.edit{
+    font-size: medium;
+}

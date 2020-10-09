@@ -1,0 +1,434 @@
+{% extends "backend/layout.html" %}
+{% load static %}
+
+
+
+{% block body %}
+<!-- <div id="testing_view">
+    <button id="testing" onclick="appliance_list_check()">Testing</button>
+</div> -->
+<div class="container">
+
+    <div id="appliance_view_form">
+        <div id="alert">
+        </div>
+        <div id="appliance_form">
+            <form action="" id="appliances_form" class="form-group">
+                {% csrf_token %}
+                <div id="form_inputs">
+                    <div class="form-row">
+                        <div class="col-md-6 ">
+                            <div class="col_lab">
+                                <label for="TVs_num" >Number of Tvs</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="TVs_num" class="form-control" placeholder="Number of Tvs" min="0">
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="col_lab">
+                                    <label for="TVs_num">Number of Decoders</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" id="Decoders_num" class="form-control" placeholder="Number of Decoders" min="0"> 
+                            </div> 
+                        </div>
+ 
+                        
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Sound Systems</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="SoundSystems_num" class="form-control" placeholder="Number of SoundSystems" min="0">
+                        </div>
+                        </div>
+
+                    
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Lights</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Lights_num" class="form-control" placeholder="Number of Lights" min="0"> 
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Heaters</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Heaters_num" class="form-control" placeholder="Number of Heaters" min="0"> 
+                        </div>
+                    </div>  
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Stoves</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Stoves_num" class="form-control" placeholder="Number of Stoves" min="0">
+                        </div>
+                    </div>  
+  
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Fridges</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Fridges_num" class="form-control" placeholder="Number of Fridges" min="0">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Kettles</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Kettles_num" class="form-control" placeholder="Number of Kettles" min="0"> 
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Microwave</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Microwaves_num" class="form-control" placeholder="Number of Microwaves" min="0">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Computers</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Computers_num" class="form-control" placeholder="Number of Computers" min="0"> 
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Printers</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Printers_num" class="form-control" placeholder="Number of Printers" min="0">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Modems</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Modems_num" class="form-control" placeholder="Number of Modems" min="0">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Electric Blankets</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="ElectricBlankets_num" class="form-control" placeholder="Number of Electric Blankets" min="0">
+                        </div>
+                    </div>
+
+
+ 
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="col_lab">
+                                <label for="TVs_num">Number of Phones</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" id="Phones_num" class="form-control" placeholder="Number of Phones" min="0">
+                        </div>
+                    </div>
+                    <br>
+                     <div>
+                     </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+            </div>
+            <div class="form-group">
+                
+            </div>
+
+
+            <div id ='model-view'> 
+                <div class="btn_calc">
+                     <!-- Button trigger modal -->
+                    <button type="button" id="calculate" class="btn btn-info" data-toggle="modal" data-target="#save_list_modal">
+                        Calculate
+                    </button>
+                </div>          
+                <!-- Modal -->
+                <div class="modal" id="save_list_modal" tabindex="-1" role="dialog" aria-labelledby="save_modal_label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="save_modal_label">Energy consumption</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="message"></div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="save" class="btn btn-info" data-dismiss="modal">Save list</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+    <div id="results_view">
+        <div id="result_msg"></div>
+        <div id="result">
+        </div>
+    </div>
+
+
+
+    <div id="appliance_view_list">
+        <div id="appliance_list">
+        <div id="current_load"></div>
+        <div id="edit_load"></div>
+        <br>
+
+   
+
+        <div class="container">
+            
+            <div class="row">
+
+                <div class="col-2">
+
+                    <ul class="list-group">
+
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            TVs number<span class="badge badge-primary badge-pill TVs_num"></span>
+                        </li>
+        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Decoders number<span class="badge badge-primary badge-pill Decoders_num"></span>
+                        </li>
+        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            SoundSystems number<span class="badge badge-primary badge-pill SoundSystems_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Lights number<span class="badge badge-primary badge-pill Lights_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Heaters number<span class="badge badge-primary badge-pill Heaters_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Stoves number<span class="badge badge-primary badge-pill Stoves_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Fridges number<span class="badge badge-primary badge-pill Fridges_num"></span>
+                        </li>
+        
+        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Kettles number<span class="badge badge-primary badge-pill Kettles_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Microwaves number<span class="badge badge-primary badge-pill Microwaves_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Computers number<span class="badge badge-primary badge-pill Computers_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Printers number<span class="badge badge-primary badge-pill Printers_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Modems number<span class="badge badge-primary badge-pill Modems_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Electric Blankets number<span class="badge badge-primary badge-pill ElectricBlankets_num"></span>
+                        </li>
+        
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Phones number<span class="badge badge-primary badge-pill Phones_num"></span>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <div id="delete_event">
+                    {% csrf_token %}
+                    <div id="delete_list" class="btn_delete"></div>
+                </div>
+                    <div class="modal" id="delete_list_modal" tabindex="-1" role="dialog" aria-labelledby="save_modal_label" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="save_modal_label">Energy consumption</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="delete_message"><p>Are you sure you want to delete this appliance list?</p></div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                            <button type="button" id="save" class="btn btn-info delete_post" data-dismiss="modal">Delete list</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+ 
+            </div>
+
+        </div>
+    
+
+
+        </div>
+    </div>
+
+
+    <div id ="redirection_view">
+    </div>
+
+
+
+    <div id = "update_view">
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> This alert box could indicate a successful or positive action.
+          </div>
+    </div>
+
+
+
+    <div id="statistics_view">
+        <div id="user_status">
+        </div>
+        <br>
+        <div class="container">
+            <div id="avg_graph">
+                <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=STEO.EXRCH_US.M" load="iframe_load"></iframe>
+            </div>
+
+        </div>
+  
+    </div>
+
+
+    <div id="user_id">{{ request.user.id|json_script:"user_id" }}</div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'backend/calculation.js' %}"></script>
+{% endblock %}
